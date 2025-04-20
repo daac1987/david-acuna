@@ -1,0 +1,159 @@
+{% extends "menuDos.html" %}
+
+<!-- envia nombre de pagina -->
+{% block titulo %} Proyectos {% endblock %}
+
+<!-- envia cuerpo de pagina -->
+{% block contenido %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+
+<div class="text-center p-3 container-fluid ">
+
+    <h5 class="text-start h4 pb-2 mb-4 text-danger border-bottom border-danger font-monospace">Proyectos</h5>
+
+    <div class="container text-center">
+
+        <div class="row align-items-start">
+
+            <div class="col-md-4 mt-1">
+                <div class="card">
+                    <h3>Agenda de Citas Medicas</h3>
+                    <video src="{% static 'imagenes/agenda.mp4' %}" controls width="100%"></video>
+                    <div class="card-body">
+                        <p class="card-text">Herramientas utilizadas: <b> PHP-HTML-CSS-SQL.</b> <br> Objetivo: Registro
+                            de citas, clientes y empleados. Manejo de agenda Medica. Creación, actualización y
+                            eliminación.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-1">
+                <div class="card">
+                    <h3>Consumo de API Pokémon</h3>
+                    <video src="{% static 'imagenes/pokemon.mp4' %}" controls width="100%"></video>
+                    <div class="card-body">
+                        <p class="card-text">Herramientas utilizadas: <b>JavaScrip-HTML-CSS-React-ApiPokémon.</b> <br>
+                            Objetivo: Buscar características de cada Pokémon, consumiendo una Api. <a
+                                href="https://react-api-ee296.web.app/" target="_blank">ApiPokémon</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-1">
+                <div class="card">
+                    <h4>Sistema de inventario y Facturación</h4>
+                    <video src="{% static 'imagenes/bar.mp4' %}" controls width="100%"></video>
+                    <div class="card-body">
+                        <p class="card-text">Herramientas utilizadas: <b>Java-SQL.</b><br>
+                            Objetivo: Manejo de inventarios y facturación, contiene módulos de administrador y ventas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container text-center">
+        <div class="row align-items-start">
+
+            <div class="col-md-4 mt-1">
+                <div class="card">
+                    <h3>Matriculas Académicas</h3>
+                    <video src="{% static 'imagenes/cs.mp4' %}" controls width="100%"></video>
+                    <div class="card-body">
+                        <p class="card-text">Herramientas utilizadas: <b>C#-SQL.</b><br>
+                            Objetivo: Manejo de matrículas a cursos, contiene módulos para cada tipo de usuario.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-1">
+                <div class="card">
+                    <h3>Proyectos Familiares</h3>
+                    <video src="{% static 'imagenes/f.mp4' %}" controls width="100%"></video>
+                    <div class="card-body">
+                        <p class="card-text">Herramientas utilizadas: <b>JavaScript-HTML-CSS.</b><br>
+                            Objetivo: Mostrar todos los emprendimientos familiares. <a
+                                href="https://familiacordero-16d5f.web.app/index.html" target="_blank">Familia
+                                Cordero</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-1">
+                <div class="card">
+                    <h3>ChatBot 'IA'</h3>
+                    <video src="{% static 'imagenes/ia.mp4' %}" controls width="100%"></video>
+                    <div class="card-body">
+                        <p class="card-text">Herramientas utilizadas:
+                            <b>Python-Json-TensorFlow-NLTK-NumPy-Pickle-Keras.</b><br>
+                            Objetivo: CHATBOT Enfocado en un producto empresarial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container text-center">
+            <div class="row align-items-start">
+
+                <div class="col-md-4 mt-1">
+                    <div class="card">
+                        <h3>Sistema de Reservas</h3>
+                        <video src="{% static 'imagenes/p2go.mp4' %}" controls width="100%"></video>
+                        <div class="card-body">
+                            <p class="card-text">Herramientas utilizadas: <b>React-MysQl.</b><br>
+                                Objetivo: Reservas de Viajes, con panel de administración.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-1">
+                    <div class="card">
+                        <h3>Plataforma de e-learning</h3>
+                        <video src="{% static 'imagenes/yirtc.mp4' %}" controls width="100%"></video>
+                        <div class="card-body">
+                            <p class="card-text">Herramientas utilizadas: <b>WordPress.</b><br>
+                            Objetivo: Vender accesos a seminarios de Gestió de Riesgos. <a href="https://yirtc.com"
+                                    target="_blank">Young International Risk Training Center</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-1">
+                    <div class="card">
+                        <h3>Landing Page</h3>
+                        <video src="{% static 'imagenes/landing.mp4' %}" controls width="100%"></video>
+                        <div class="card-body">
+                            <p class="card-text">Herramientas utilizadas:
+                                <b>React.</b><br>
+                                Objetivo: Página de aterrizaje e informativa. <a href="https://landing.yirtc.com"
+                                target="_blank">Young International Risk Training Center</a></p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="m-1 bg-white rounded pb-1">
+            <h3 class="text-black">Desarrollo K&S</h3>
+            <h6 class="text-black">"Esta aplicación web fue realizada con las siguientes herramientas:
+                Django-Python-Json-TensorFlow-NLTK-NumPy-Pickle-Keras-HTML-CSS-JavaScript."</h6>
+        </div>
+    </div>
+    <div class="container-fluid bg-danger bg-opacity-10 border border-danger border-start-0 rounded-end mt-2">
+        <h3 class="text-warning">"Utilizo todo mi conocimiento para convertir en realidad la página web de tus sueños"
+        </h3>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "menuDos.html" %}
+
+<!-- envia nombre de pagina -->
+{% block titulo %} Contacto {% endblock %}
+
+<!-- envia cuerpo de pagina -->
+{% block contenido %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+<div class="text-center p-3 container-fluid">
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h1 class="modal-title fs-5 text-white" id="staticBackdropLabel">Desarrollo K&S</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body bg-info">
+                    <img src="{% static 'imagenes/dac.png' %}" class=" img-fluid rounded border" alt="logo"
+                        width="120px">
+                    <h5>Mensaje enviado con éxito!!!</h5>
+                    <h5>Pronto responderemos tu duda.</h5>
+                    <h5>Muchas gracias por contactarnos!!!</h5>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="h4 pb-2 mb-4 text-danger border-bottom border-danger text-start font-monospace">Contacto</h5>
+
+    <h5 class="h4 pb-2 mb-2 text-center font-monospace text-white">Formulario</h5>
+
+    <!-- formulario -->
+    <form id="form">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput1" placeholder="Nombre" pattern="^[a-zA-Z ]*$"
+                name="nombre" required maxlength="40" minlength="10">
+            <label for="floatingInput1">Nombre</label>
+        </div>
+
+        <div class="mb-3">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput2" placeholder="Teléfono" required
+                    pattern="[0-9.]+" name="telefono" maxlength="20" minlength="8">
+                <label for="floatingInput2">Teléfono</label>
+            </div>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput3" placeholder="name@example.com" required
+                    name="correo">
+                <label for="floatingInput3">Correo Electrónico</label>
+            </div>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea class="form-control" placeholder="Comentario" id="floatingTextarea4" required
+                name="comentario"></textarea>
+            <label for="floatingTextare4">Comentario</label>
+        </div>
+
+        <div class="form-floating">
+            <input class="btn btn-outline-primary" type="submit" id="button" value="Enviar">
+            <!-- imagen del botón -->
+        </div>
+    </form>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        emailjs.init('6oEqKvkU6TZqoyRt1')
+    </script>
+
+    <p class="pb-2 mt-4 text-center font-monospace text-white">
+        En el pie de página encontrarás varios enlaces para comunicarte conmigo. Estoy comprometido a brindarte el mejor
+        servicio y acompañarte en cada paso del camino. No dudes en utilizar cualquiera de ellos para ponerte en
+        contacto.
+    </p>
+
+
+</div>
+
+<script>
+    const btn = document.getElementById('button');
+    const text = document.getElementById('floatingInput');
+
+    document.getElementById('form')
+        .addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            btn.value = 'Enviando...';
+
+            const serviceID = 'default_service';
+            const templateID = 'template_brg8x92';
+            const myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), { focus: false })
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    btn.value = 'Enviar';
+                    limpiarInput();
+                    myModal.show();
+                }, (err) => {
+                    btn.value = 'Enviar';
+                    alert(JSON.stringify(err));
+                });
+        });
+
+    function limpiarInput() {
+        document.getElementById('floatingInput1').value = ""
+        document.getElementById('floatingInput2').value = ""
+        document.getElementById('floatingInput3').value = ""
+        document.getElementById('floatingTextarea4').value = ""
+    }    
+</script>
+
+{% endblock %}
