@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-7!0lyx*^%0f#r@h(0jd2fb=m)m%m*5@$d6@6dvszc*ugx@ew_z
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['tu-app.onrender.com', 'www.david-acuna.website']
+ALLOWED_HOSTS = ['david-acuna.onrender.com', 'www.david-acuna.website']
 
 
 # Application definition
