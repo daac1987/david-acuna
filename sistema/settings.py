@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-7!0lyx*^%0f#r@h(0jd2fb=m)m%m*5@$d6@6dvszc*ugx@ew_z
 #SECRET_KEY = os.enviroment.get('SECRET_KEY' , default='dlfasegklelrwwer')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = os.getenv('DEBUG', 'False') == 'True'
+#DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = ['david-acuna.onrender.com', 'www.david-acuna.website']
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['david-acuna.onrender.com', 'www.david-acuna.website']
 
 
 # Application definition
