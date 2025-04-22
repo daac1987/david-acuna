@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 
-# Usar pyenv para fijar versión de Python
-pyenv install 3.10.11
-pyenv global 3.10.11
+# Asegurar que el entorno está limpio
+set -o errexit
+set -o pipefail
+set -o nounset
 
-# Continuar con instalación normal
+# Instalar portaudio para que PyAudio compile bien
+apt-get update && apt-get install -y portaudio19-dev
+
+# Instalar dependencias del proyecto
 pip install --upgrade pip
 pip install -r requirements.txt
 
-# Comando para migraciones (si aplica)
+# Si estás usando Django (opcional)
 python manage.py migrate
 
-# O cualquier otro comando que usás
