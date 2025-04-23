@@ -2,13 +2,14 @@ services:
   - type: web
     name: david-acuna
     runtime: python
-    pythonVersion: 3.10.11  # <- ¡Forzamos esta versión!
+    pythonVersion: 3.10.11
     buildCommand: |
-      apt-get update && apt-get install -y portaudio19-dev  # Necesario para PyAudio
+      apt-get update && apt-get install -y portaudio19-dev
       pip install --upgrade pip
       pip install -r requirements.txt
+      python manage.py collectstatic --noinput  # <- ¡Agregado!
     startCommand: gunicorn sistema.wsgi:application
+    staticPublishPath: staticfiles  # <- ¡Esto es lo que Render usa para servir imágenes, CSS, JS!
     envVars:
       - key: DEBUG
         value: "False"
-
