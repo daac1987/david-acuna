@@ -122,9 +122,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Asegúrate de que esta ruta sea válida en tu servidor
-STATICFILES_DIRS = [BASE_DIR / "static"]  # Esta es la carpeta donde tienes tus archivos estáticos
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
